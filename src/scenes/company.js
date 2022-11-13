@@ -1,6 +1,7 @@
 import { Scenes, Markup } from "telegraf";
 import { SCENE_COMPANY } from "./constant.js";
 import { Keyboard } from "telegram-keyboard";
+import { saveDataWithId } from "../botDataAdapter.js";
 
 const companyWizard = new Scenes.WizardScene(
   SCENE_COMPANY,
@@ -39,8 +40,10 @@ const companyWizard = new Scenes.WizardScene(
 );
 companyWizard.leave((ctx) => {
   ctx.reply(_CdetailsFormatter(ctx.wizard.state.data));
+  ctx.wizard.state.data.type = "company";
+  saveDataWithId(ctx.from.id, ctx.wizard.state.data);
   ctx.reply(
-    `Thank you ${ctx.message.from.first_name}! your information successfully saved`
+    `Thank you ${ctx.from.first_name}! your information successfully saved`
   );
 });
 const _CdetailsFormatter = (data) => {
