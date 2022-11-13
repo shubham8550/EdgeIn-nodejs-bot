@@ -47,8 +47,10 @@ const investorWizard = new Scenes.WizardScene(
   }
 );
 investorWizard.leave((ctx) => {
-  console.log(ctx.wizard.state);
   ctx.reply(_IdetailsFormatter(ctx.wizard.state.data));
+  ctx.reply(
+    `Thank you ${ctx.message.from.first_name}! your information successfully saved`
+  );
 });
 
 const _IdetailsFormatter = (data) => {

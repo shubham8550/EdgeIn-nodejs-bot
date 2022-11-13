@@ -38,8 +38,10 @@ const companyWizard = new Scenes.WizardScene(
   }
 );
 companyWizard.leave((ctx) => {
-  console.log(ctx.wizard.state);
   ctx.reply(_CdetailsFormatter(ctx.wizard.state.data));
+  ctx.reply(
+    `Thank you ${ctx.message.from.first_name}! your information successfully saved`
+  );
 });
 const _CdetailsFormatter = (data) => {
   return `
