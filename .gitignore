@@ -1,4 +1,4 @@
 /node_modules
 .env
+key.json
 botDatabase.json
-edgeinsheetsapi-e0341236851a.json
