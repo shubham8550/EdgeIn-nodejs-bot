@@ -9,7 +9,9 @@ const investorWizard = new Scenes.WizardScene(
     ctx.reply(
       "Hello! Please type your full name or select option",
       Keyboard.make([
-        `My name is ${ctx.from.first_name} ${ctx.from.last_name}`,
+        `My name is ${ctx.from.first_name} ${
+          ctx.from.last_name ? ctx.from.last_name : ""
+        }`,
       ]).inline()
     );
     ctx.wizard.state.data = {};
@@ -17,7 +19,9 @@ const investorWizard = new Scenes.WizardScene(
   },
   (ctx) => {
     if (ctx?.callbackQuery?.data) {
-      ctx.wizard.state.data.i_name = `${ctx.from.first_name} ${ctx.from.last_name}`;
+      ctx.wizard.state.data.i_name = `${ctx.from.first_name} ${
+        ctx.from.last_name ? ctx.from.last_name : ""
+      }`;
     } else {
       ctx.wizard.state.data.i_name = ctx.message.text;
     }

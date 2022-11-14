@@ -20,7 +20,7 @@ const botHandler = (bot) => {
   bot.use(stage.middleware());
   bot.command("start", (ctx) => {
     chatIdSaveIfNotExist(ctx.from.id);
-    console.log(ctx.from.id);
+    console.log(ctx.from);
     ctx.scene.enter(SCENE_TYPE_SELECTION);
   });
   bot.command("company", (ctx) => {
