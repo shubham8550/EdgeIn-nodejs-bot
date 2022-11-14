@@ -2,15 +2,25 @@ import { Scenes, Markup } from "telegraf";
 import { SCENE_INVESTOR } from "./constant.js";
 import { Keyboard } from "telegram-keyboard";
 import { saveDataWithId } from "../botDataAdapter.js";
+import { addInvestorInSheet, isExistsInInvestor } from "../sheetDataAdapter.js";
 const investorWizard = new Scenes.WizardScene(
   SCENE_INVESTOR,
   (ctx) => {
-    ctx.reply("Hello! Please tell me your full name");
+    ctx.reply(
+      "Hello! Please type your full name or select option",
+      Keyboard.make([
+        `My name is ${ctx.from.first_name} ${ctx.from.last_name}`,
+      ]).inline()
+    );
     ctx.wizard.state.data = {};
     return ctx.wizard.next();
   },
   (ctx) => {
-    ctx.wizard.state.data.i_name = ctx.message.text;
+    if (ctx?.callbackQuery?.data) {
+      ctx.wizard.state.data.i_name = `${ctx.from.first_name} ${ctx.from.last_name}`;
+    } else {
+      ctx.wizard.state.data.i_name = ctx.message.text;
+    }
     ctx.reply(
       `Hey ${ctx.wizard.state.data.i_name}! Can you tell me the name of company in which you have invested?`
     );
@@ -47,8 +57,15 @@ const investorWizard = new Scenes.WizardScene(
     return ctx.scene.leave();
   }
 );
-investorWizard.leave((ctx) => {
+investorWizard.leave(async (ctx) => {
   ctx.reply(_IdetailsFormatter(ctx.wizard.state.data));
+
+  if (await isExistsInInvestor(ctx.wizard.state.data)) {
+    return ctx.reply("The Data you want to add is already registered");
+  }
+
+  addInvestorInSheet(ctx.wizard.state.data, ctx.from.username);
+
   ctx.wizard.state.data.type = "investor";
   saveDataWithId(ctx.from.id, ctx.wizard.state.data);
   ctx.reply(

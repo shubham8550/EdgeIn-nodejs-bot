@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "edgeinsheetsapi",
+  "private_key_id": "e0341236851a1b112145603c4e7813982e78de1d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDCS5j/gqEiBXM9\nnQPwPVvmq3zoY9fTM2h3fRGNlbcONLRqsa7Jrx2HB8IM19K1f6s+7hWeHG2ZU4yM\nVP+CNY7tGoYX/S4YTmiD3u7ThO2VRWY0n16vjNYP9AT8dl5eZ5zZLWHBLSKCrir1\n5npSFm91xOwIRu+iQ3Y7IFH6ECMHustT8Yt+gvU7eADji3+3XF5V5NrGjrsjNTmh\nwuQEJoqferpNE64rNQfYGY4uVSRrMEa08oI51VM9zE7lfh729I+FdxyMA6HKDrgP\ncJL8nUqBZhubtsJ1Oh2J7wtaVB6RDMUnld4QANsjKXKq27rP7gXn9DwAMY+5hvrM\nn68aWxVFAgMBAAECggEAXHdo5XTwJYZNfW2b4bn54jIL3Hcj0C4fkfoyH904BKk9\nkadlJTPTTB97kOwnqdwMDgN1w00JNdamxWRwQzIlBp9AYOtLhCLQp62xoHWbMhaY\nmQOdptNSTr5VnybgK3KJGWx5INvPmDy2UlexMB7gRb6FjDziL6mGe4YarXT/jt3Y\n39Ve6V+5Qi9d8xXIjwevttB9EO2y9VZIsLB7WhbqHiN1XEJTJjMd6le2yj4s+9KH\nGEZqoNrp7ggzWJ/lKnUpYdmwYe0ZjiC9T8Cs3HdVCjWMB8vK0lwkKTKgSLkRzokn\nvstAlw0NZd/l4TuAjdI4byRJSBInM3URfRIGkYfAMwKBgQDshQV+rqtZ2SSCkYZn\nVMtTIyh/cxCgOCG+VnzqAh35+oO86Ln3bWx7FNtuAGgVxPLJHywz5vK6Hb7c8v3T\njIDwVWUN8J0daG1zAJXYLj29++8yLr7SQMRGCWCnc8aI1HyM3qQq0TS6Q+wwzZvD\n2ByGlZ7VDisPO5oBwM95fBmx1wKBgQDSTEiEpBbFC0KJ98BwbbHIc50GK4KBaO8U\nU4ZkS6GlAwfcc7KbJW4ySqF6HiJhzKctETihXnU60jMZjLrC2I/ZnqFXHVXqtAKY\nZqiO3CT9Wtkx+wg51BVlEryDvo2Y03ONLwUAgf6EXmGVVEgaxsL6xxKXLRgRlPV7\nEwxnrG2GQwKBgDX33FsdrAeiXoxUfGCTnplnylPag46rgDeYMISM2x4xJWIzkEt+\n8mPbTH57JUTiXau6qzFknzoMk4KDB5v/0WQFeDuIDbGqJF87YPWlB32UQO4ocG41\nTRPWC/HpnwGVyp2yJ6+FcQyXdwtjvwkfBNNIzKc8xmKBbRC9WBoWUR6dAoGBALqo\nju18n+FBv0uqphqkotpjFAr375xhwWNvR6gaIV3PtNiNsQhYTtlAuNcljCr2daRg\n1r0UlEUjccvJx7NOeVAVpusl1K7AHFWdORukdwiR7JqaUJDTmDHgUYc2SYROmw/D\nnlL3Dyv6ge8DogRyS3o/3FZm5igk6UbWf3o95/D1AoGBAJxygoOTG+AUpIyMtk6w\nsgvinaUj8gU1x08wlIAdAABKdnFjt6GD7CK9kW52jgSNs7GgewaxBtkyhEbiKbET\n7EhG5qEB1carmeRFmaNaCEmkv4Wdpm1Rlhj/at92ohX4SpuB7Q9amxV6RRoAxXKS\nYTyeT5wZrZQIexhfd+7vecPY\n-----END PRIVATE KEY-----\n",
+  "client_email": "edgeinbot@edgeinsheetsapi.iam.gserviceaccount.com",
+  "client_id": "113315840977307481812",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/edgeinbot%40edgeinsheetsapi.iam.gserviceaccount.com"
+}

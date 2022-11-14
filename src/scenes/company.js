@@ -2,6 +2,7 @@ import { Scenes, Markup } from "telegraf";
 import { SCENE_COMPANY } from "./constant.js";
 import { Keyboard } from "telegram-keyboard";
 import { saveDataWithId } from "../botDataAdapter.js";
+import { addCompanyInSheet, isExistsInCompany } from "../sheetDataAdapter.js";
 
 const companyWizard = new Scenes.WizardScene(
   SCENE_COMPANY,
@@ -38,8 +39,13 @@ const companyWizard = new Scenes.WizardScene(
     return ctx.scene.leave();
   }
 );
-companyWizard.leave((ctx) => {
+companyWizard.leave(async (ctx) => {
   ctx.reply(_CdetailsFormatter(ctx.wizard.state.data));
+  if (await isExistsInCompany(ctx.wizard.state.data)) {
+    return ctx.reply("The Data you want to add is already registered");
+  }
+
+  addCompanyInSheet(ctx.wizard.state.data, ctx.from.username);
   ctx.wizard.state.data.type = "company";
   saveDataWithId(ctx.from.id, ctx.wizard.state.data);
   ctx.reply(
