@@ -17,3 +17,11 @@ Creation of Telegram Bot in Nodejs for Data Logging
 - rename service account key (json) to 'key.json' and place it in root directory
 - share sheet to ur service account email address
 - create .env file and add variables from .env.example
+
+
+---
+### cmds
+
+- /start
+- /company
+- /investor 
